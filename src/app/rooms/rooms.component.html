@@ -1,0 +1,37 @@
+
+<app-header></app-header>
+
+<!-- <button (click)="toggle()" > Toggle </button>
+
+
+<h2> {{  getErrors$  | async}} </h2>
+
+Number of rooms <h2> {{ roomsCount$  | async}} </h2> -->
+
+
+
+<div >
+
+  {{ priceFilter | json }}
+
+  <input type="number" class="form-control" placeholder="price" [formControl]="priceFilter">
+
+
+  {{  priceFilter.value }}
+
+</div>
+<div *ngIf="rooms$ | async as rooms">
+<app-rooms-list  [rooms] = "rooms" [price] = "priceFilter.value" (selectedRooms) = "handleSelectedRoom($event)"></app-rooms-list>
+
+</div>
+
+
+<!-- <button (click)="addRooms()" routerLink="rooms/add"> Add Rooms </button> -->
+
+<button routerLink="/rooms/add" class="btn btn-success"> Add Rooms </button>
+
+<!-- <button (click)="editRooms()"> Edit Rooms </button>
+
+
+
+<button (click)="deleteRooms()"> Delete Rooms </button> -->

@@ -1,0 +1,49 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th> roomNumber </th>
+            <th> roomType</th>
+            <th> amenities </th>
+            <th> price </th>
+            <th> checkinTime </th>
+            <th> checkoutTime </th>
+            <th> rating</th>
+        </tr>
+        <tr *ngFor="let room of rooms | filter : price">
+
+            <td>
+                {{room.roomNumber}}
+            </td>
+
+            <td>
+                {{room.roomType}}
+            </td>
+            <td>
+                {{room.amenities}}
+            </td>
+            <td>
+                {{room.price}}
+            </td>
+
+            <td>
+                {{room.checkinTime}}
+            </td>
+
+            <td>
+                {{room.checkoutTime}}
+            </td>
+
+            <td>
+                {{room.rating}}
+            </td>
+
+            <td>
+                <button type="button" [routerLink]="['/booking', room.roomNumber]" (click)="selectRooms(room)"> Book </button>
+            </td>
+        </tr>
+
+    </thead>
+
+</table>
+
+<router-outlet></router-outlet>

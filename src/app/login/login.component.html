@@ -1,0 +1,21 @@
+<form>
+
+
+
+  <div class="form-group">
+    <input #emailed="ngModel" appEmailvalidator  name="price" [(ngModel)]="email"  type="email" class="form-control" required   />
+  </div>
+
+  <div> {{emailed.errors | json}} </div>
+
+  <div class="form-group">
+    <input type="password"  appHover name="photos"  [(ngModel)]="password" class="form-control"  required />
+  </div>
+
+
+
+  <div class="form-group">
+    <button type="submit" (click)="login()" >Login</button>
+  </div>
+
+</form>
